@@ -25,7 +25,7 @@ public class Main {
 				System.out.println(" BYE ");
 			}
 			if (userChoice==1) {
-				Array.Run();
+				Arraaay.Run();
 			}else if (userChoice==2) {
 				Nested.Run();
 			}else if (userChoice==3) {
