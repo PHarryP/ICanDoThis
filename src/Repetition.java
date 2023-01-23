@@ -3,26 +3,38 @@ import java.util.Scanner;
 
 public class Repetition {
 	public static void Run() {
-		//Scanner in = new Scanner(System.in);
-//		Random rnd=new Random();
-//		int upperbound = 10;
-		//int[] array = new int[3];
-		//for (int i = 0;i<array.length;i++) {
-		//	int  int_ar = rnd.nextInt(upperbound);
-		//	array[i] = rnd.nextInt(upperbound);
-		//}
-//		int[] array = new int[rnd.nextInt(upperbound)];
-//		System.out.println(array);
-//		int  int_ar = rnd.nextInt(upperbound);
-//		System.out.println(int_ar);
-
-		int[] ar = new int[3];
-		Random rnd = new Random();
-		int rndnum = rnd.nextInt(10);
-		for(int i = 0; i<10; i++) {
-			 rndnum = rnd.nextInt(ar.length);
+		Random rand = new Random();
+		int[] firstSet=new int[3];
+		int[] nextSet;
+		//Keep track of the number of repetitions
+		int counter =0;
+		//Generate the first set of 3 random digits
+		for(int i=0;i<3;i++) {
+			firstSet[i] = rand.nextInt(10);
 		}
-		System.out.println(rndnum);
+	
+	//generate new sets of 3 digits until they match the first three
+		do {
+			nextSet = new int[3];
+			for (int i=0;i<3;i++) {
+				nextSet[i]=rand.nextInt(10);
+			}
+			//increase the counter
+			counter++;
+		}while(!matchingSets(firstSet, nextSet));
+		System.out.println("Matching sets found:"+ firstSet[0]+firstSet[1]+firstSet[2]+"="+nextSet[0]+nextSet[1]+nextSet[2]);
+		System.out.println("Number of repetitions"+counter);
 	}
+	//check if two sets of digits match
+	public static boolean matchingSets(int[] set1, int[] set2) {
+		for(int i =0;i<3;i++) {
+			if(set1[i]!=set2[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	
 
 }

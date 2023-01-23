@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Subprograms {
@@ -9,18 +10,18 @@ public class Subprograms {
 		System.out.println("Enter a second string");
 		String b = in.nextLine();
 		
-		//String str = "";
-		
-			
-		
-	//	for (int i=0; i<a.length() || i<b.length(); i++) {
-	//		if (i<a.length()) {
-	//			res.append(a.charAt(i));
-	//		}else if(i<b.length()) {
-	//			res.append(b.charAt(i));
-	//		}
-	//	}
-	//	System.out.println(res.toString());
+	StringBuilder interlaced = new StringBuilder();
+	int maxLength=Math.max(a.length(),b.length());
+	for (int i = 0;i<maxLength;i++) {
+		if(i<a.length()) {
+			interlaced.append(a.charAt(i));
+		}
+		if (i<b.length()) {
+			interlaced.append(b.charAt(i));
+		}
+	}
+		System.out.println(interlaced.toString());
+	
 		 
 	}
 
