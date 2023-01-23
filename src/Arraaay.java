@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Array {
+public class Arraaay {
 	public static void Run() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("I'm running!");
@@ -37,3 +37,4 @@ public class Array {
 		//System.out.println(average);
 	}
 }
+
